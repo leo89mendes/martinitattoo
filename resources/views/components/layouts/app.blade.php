@@ -14,7 +14,7 @@
         <meta property="og:title" content="Martini Tattoo">
         <meta property="og:description" content="A mais de 15 anos fazendo todos os tipos de tatuagem.">
         <meta property="og:url" content="https://www.martinitattoo.com">
-        <meta property="og:image" content="asset(assets/img/theme.jpg)">
+        <meta property="og:image" content="asset(storage/assets/img/theme.jpg)">
         <title>Martini Tattoo</title>
 
         <style>
