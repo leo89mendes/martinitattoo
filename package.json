@@ -16,9 +16,9 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "alpinejs": "^3.14.3",
         "animejs": "^3.2.2",
-        "flickity": "^3.0.0",
-        "jquery": "^3.7.1",
-        "lightbox2": "^2.11.5"
+        "lightgallery": "^2.7.2",
+        "swiper": "^11.1.14"
     }
 }

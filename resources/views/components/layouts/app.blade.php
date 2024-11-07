@@ -16,7 +16,6 @@
         <meta property="og:url" content="https://www.martinitattoo.com">
         <meta property="og:image" content="{{ asset('storage/assets/img/theme.jpg') }}">
         <title>Martini Tattoo</title>
-
         <style>
             [x-cloak] {
                 display: none !important;
@@ -27,10 +26,11 @@
         @vite('resources/css/app.css')
     </head>
 
-    <body class="bg-black">
+    <body class="bg-black overflow-x-hidden">
         {{ $slot }}
 
         @filamentScripts
         @vite('resources/js/app.js')
+        
     </body>
 </html>
