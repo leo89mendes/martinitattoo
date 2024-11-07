@@ -21,6 +21,10 @@ return [
         'scheme' => 'https',
     ],
 
+    'instagram' =>[
+        'token' => env('INSTAGRAM_TOKEN')
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
