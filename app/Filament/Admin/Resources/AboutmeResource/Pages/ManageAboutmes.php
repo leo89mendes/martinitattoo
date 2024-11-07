@@ -13,7 +13,7 @@ class ManageAboutmes extends ManageRecords
     protected function getHeaderActions(): array
     {
         return [
-           // Actions\CreateAction::make()->label('Novo'),
+            Actions\CreateAction::make()->label('Novo'),
         ];
     }
 }
