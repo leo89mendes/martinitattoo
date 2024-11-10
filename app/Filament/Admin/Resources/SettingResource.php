@@ -37,9 +37,28 @@ class SettingResource extends Resource
                     ->disk('public')
                     ->imageEditor()
                     ->downloadable()
-                    ->uploadingMessage('Aguarde...')
                     ->directory('assets/img')
                     ->required(),
+                FileUpload::make('bg_clients')->label('Imagem Feedback')->image()
+                ->disk('public')
+                ->imageEditor()
+                ->imageResizeMode('cover')
+                ->imageEditorViewportWidth('1920')
+                ->imageEditorViewportHeight('1080')
+                ->imageCropAspectRatio('16:9')
+                ->imageEditorMode(3)
+                ->downloadable()
+                ->directory('assets/img/banners'),
+                FileUpload::make('bg_footer')->label('Imagem Rodapé')->image()
+                ->disk('public')
+                ->imageEditor()
+                ->imageResizeMode('cover')
+                ->imageEditorViewportWidth('1920')
+                ->imageEditorViewportHeight('1080')
+                ->imageCropAspectRatio('16:9')
+                ->imageEditorMode(3)
+                ->downloadable()
+                ->directory('assets/img/banners'),
                 TextInput::make('address')->label('Address'),
                 TextInput::make('email')->label('Email')->suffix('@martinitattoo.com'),
                 TextInput::make('telephone')->label("What's App")->prefix('+55'),
@@ -62,6 +81,8 @@ class SettingResource extends Resource
                 TextColumn::make('facebook')->label('Facebook')->prefix('https://'),
                 TextColumn::make('instagram')->label('Instagram')->prefix('https://'),
                 TextColumn::make('youtube')->label('Youtube')->prefix('https://'),
+                ImageColumn::make('bg_clients')->label('Imagem Feedback'),
+                ImageColumn::make('bg_footer')->label('Imagem Rodapé')
             ])
             ->filters([
                 //

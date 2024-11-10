@@ -17,6 +17,8 @@ class Setting extends Model
         'instagram',
         'twitter',
         'facebook',
-        'youtube'
+        'youtube',
+        'bg_clients',
+        'bg_footer'
     ];
 }

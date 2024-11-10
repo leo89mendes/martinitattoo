@@ -37,13 +37,24 @@ class BannersResource extends Resource
                 TextInput::make('title')->label('Título'),
                 RichEditor::make('subtitle')->label('Descrição'),
                 TextInput::make('btn_text')->label('Botão Texto'),
-                TextInput::make('link')->label('Link Botão')->prefix('https://'),
                 FileUpload::make('img')->label('Imagem Banner')->image()
                 ->disk('public')
                 ->imageEditor()
                 ->imageResizeMode('cover')
                 ->imageEditorViewportWidth('1920')
-                ->imageEditorViewportHeight('720')
+                ->imageEditorViewportHeight('1080')
+                ->imageCropAspectRatio('16:9')
+                ->imageEditorMode(3)
+                ->downloadable()
+                ->uploadingMessage('Aguarde...')
+                ->directory('assets/img/banners')
+                ->columnSpan(2),
+                FileUpload::make('img_mobile')->label('Imagem Mobile')->image()
+                ->disk('public')
+                ->imageEditor()
+                ->imageResizeMode('cover')
+                ->imageEditorViewportWidth('320')
+                ->imageEditorViewportHeight('180')
                 ->imageCropAspectRatio('16:9')
                 ->imageEditorMode(3)
                 ->downloadable()
@@ -60,8 +71,8 @@ class BannersResource extends Resource
                 TextColumn::make('title')->label('Title'),
                 TextColumn::make('subtitle')->label('Description')->html()->wrap(),
                 TextColumn::make('btn_text')->label('Button Text'),
-                TextColumn::make('link')->label('Button Link'),
-                ImageColumn::make('img')->label('Banner Image')
+                ImageColumn::make('img')->label('Banner Image'),
+                ImageColumn::make('img_mobile')->label('Imagem Mobile'),
             ])
             ->filters([
                 //

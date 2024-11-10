@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('title');
             $table->longText('subtitle');
             $table->string('btn_text');
-            $table->longText('link');
             $table->json('img');
+            $table->longText('img_mobile');
             $table->timestamps();
         });
     }

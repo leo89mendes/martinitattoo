@@ -1,5 +1,6 @@
 <?php
 use App\Livewire\Home;
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home::class);
+Route::get('/', Home::class)->name('home');
+Route::post('send-mail', [MailController::class, 'store'])->name('send-mail');

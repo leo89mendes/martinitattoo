@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lightGallery(document.getElementById('open-google-map'), {
         selector: 'this',
         download: false,
+        closeOnTap: true,
+        hideScrollbar: true,
     });
     
     // init Swiper:
@@ -109,6 +111,12 @@ function loading (){
         document.querySelector('body').classList.add('overflow-y-auto')
         document.querySelector('.preloader').style.display = 'none';
         swiperBanner.init();
+        if(document.getElementById("notification") != null)
+        {
+            setTimeout(() => {
+                document.getElementById("notification").style.visibility = 'hidden';
+            }, 8000);
+        }
     }
 }
 int = setInterval(loading, 200)

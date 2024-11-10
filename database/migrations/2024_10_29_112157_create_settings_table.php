@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
+            $table->longText('bg_clients');
+            $table->longText('bg_footer');
             $table->timestamps();
         });
     }

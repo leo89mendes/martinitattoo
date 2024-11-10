@@ -9,7 +9,7 @@ class Banners extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'subtitle', 'img', 'btn_text', 'link'];
+    protected $fillable = ['title', 'subtitle', 'img', 'btn_text', 'link', 'img_mobile'];
 
     protected $casts = [
         'img' => 'json'

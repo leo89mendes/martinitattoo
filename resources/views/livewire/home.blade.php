@@ -25,6 +25,46 @@
             </svg>
         </div>
     </a>
+    @if($errors->all())
+    <div id="notification" x-data="{close: false}"  x-show="!close" class="z-50 fixed top-2 right-2 flex bg-[#292b2e] items-center w-full max-w-md bg- p-4 mb-4 text-gray-500 rounded-[25px] shadow">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 rounded-[25px]">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z"/>
+            </svg>
+            <span class="sr-only">Error icon</span>
+        </div>
+        <div class="ms-3 text-sm font-normal text-white">
+            @foreach($errors->all() as $error)
+                {{ $error }} <br />
+            @endforeach
+        </div>
+        <button @click="close = ! close"  type="button" class="ms-auto -mx-1.5 -my-1.5  text-white  rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-red-900 inline-flex items-center justify-center h-8 w-8">
+            <span class="sr-only">Close</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+        </button>
+    </div>
+    @endif
+    @if(session('message'))
+    <div id="notification" x-data="{close: false}"  x-show="!close" class="z-50 fixed top-2 right-2 flex items-center w-full max-w-md bg-[#292b2e] p-4 mb-4 text-gray-500 rounded-[25px] shadow dark:text-gray-400 dark:bg-gray-800">
+        <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-[#1cdfbc] rounded-[25px]">
+            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+            </svg>
+            <span class="sr-only">Check icon</span>
+        </div>
+        <div class="ms-3 text-sm font-normal text-white">
+            {{ session('message') }}
+        </div>
+        <button @click="close = ! close"  type="button" class="ms-auto -mx-1.5 -my-1.5  text-white  rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-[#1cdfbc] inline-flex items-center justify-center h-8 w-8">
+            <span class="sr-only">Close</span>
+            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+            </svg>
+        </button>
+    </div>
+    @endif
     <header>
         <nav class="menu cursor-pointer hidden md:grid grid-cols-5 py-[1.5rem] md:px-[13rem] text-[0.8rem]">
             <div class="px-4 grid grid-cols-2 col-span-2 gap-2 text-center items-center font-semibold uppercase">
@@ -94,7 +134,7 @@
                             <h2 class="text-[4rem]">{{$banner['title']}}</h2>
                             <h4>{!! $banner['subtitle'] !!}</h4>
                             <div class="flex justify-center text-[1rem] ">
-                                <a href="https://wa.me/{{ $setting[0]->telephone }}" class='hover:border-2 hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[4rem]'>
+                                <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[4rem]'>
                                     {{$banner['btn_text']}}
                                 </a> 
                             </div>
@@ -130,7 +170,7 @@
     </section>
     <!-- INSTAGRAM GOES HERE -->
     <livewire:instagram-gallery />
-    <section class="testimonials bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/assets/img/bg_testimonials.jpg') }})">
+    <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
         <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
         <h1 class=" font-medium text-[2.8rem] text-center w-full">
             Clientes Feedback
@@ -228,18 +268,19 @@
             </ul>
         </div>
         <div class="contact bg-[#292b2e] md:py-8 px-4 rounded-[25px] md:w-6/12">
-            <form method="post" action="/contact#ContactForm" id="ContactForm" accept-charset="UTF-8" class="isolate"><input type="hidden" name="form_type" value="contact"><input type="hidden" name="utf8" value="✓"><div class="contact__fields">
+            <form method="POST" action="{{ route('send-mail') }}" id="ContactForm" accept-charset="UTF-8" class="isolate">
+                @csrf
                 <div class="field ">
-                    <input class=" focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" autocomplete="name" type="text" id="ContactForm-name" name="contact[Name]" value="" placeholder="Nome" required="">
+                    <input class=" focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" autocomplete="name" type="text" id="ContactForm-name" name="name" value="{{ old('name') }}" placeholder="Nome" >
                 </div>
                 <div class="field">
-                    <input class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" autocomplete="email" type="email" id="ContactForm-email"  name="contact[email]" spellcheck="false" autocapitalize="off" value="" aria-required="true" placeholder="E-mail " required="">
+                    <input class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" autocomplete="email"  id="ContactForm-email"  name="email" spellcheck="false" autocapitalize="off" value="{{ old('email') }}" aria-required="true" placeholder="E-mail " required="">
                 </div>
                 <div class="field">
-                    <input class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" type="tel" id="ContactForm-phone"  autocomplete="tel" name="contact[Phone number]" pattern="[0-9\-]*" value="" placeholder="Celular" required="">
+                    <input class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" type="cel" id="ContactForm-phone"  autocomplete="tel" name="cel" pattern="[0-9\-]*" value="{{ old('cel') }}" placeholder="Celular" required="">
                 </div> 
                 <div class="field ">
-                    <textarea class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" rows="3" id="ContactForm-body"  name="contact[Comment]" placeholder="Sua Pergunta" required=""></textarea>
+                    <textarea class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" rows="3" id="ContactForm-body"  name="question" placeholder="Sua Pergunta" required=""></textarea>
                 </div>
                 <div class="contact__button my-4 md:my-0">
                     <button class="text-black py-4 md:mx-4 bg-[#1cdfbc] rounded-[4rem] w-[12rem]" type="submit" class="button">
@@ -249,10 +290,9 @@
             </form>
         </div>
     </section>
-    <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/assets/img/bg_footer.png') }})">
+    <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
             <img class="rounded-[25px] h-[160px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
-            <cite class="mx-8 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</cite>
             <ul class="list-social inline-flex gap-4" role="list">
                 @if($setting[0]['twitter'] != '')
                 <li class="list-social__item">
