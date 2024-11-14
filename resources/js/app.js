@@ -142,7 +142,7 @@ addEventListener('scroll', (event)=>{
     }
 })
 document.querySelector('#top').addEventListener("click", function(){
-    scrollToSection('#totop');
+    window.scrollTo.top
 });
 //END BTN scroller to top
 // Attach click event listeners to menu items
