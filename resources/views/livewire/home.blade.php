@@ -77,13 +77,13 @@
             <div class="  w-4/12  px-8 flex flex-row justify-start items-center gap-12 text-center font-semibold uppercase">
                 <a class="hover:text-[#1cdfbc]"  href="#contact">Contato</a>
                 <a class='border-2 border-black text-black px-4 py-4 hover:ring-2 hover:ring-offset-2  bg-[#1cdfbc] rounded-[25px]' href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
-                    FAÇA UM ORÇAMENTO
+                    FAÇA SEU ORÇAMENTO
                 </a> 
             </div>
         </nav>
         <!-- menu mobile -->
         <div class="flex md:hidden justify-center">
-            <a href="{{ url('/') }}"><img class="rounded-[25px] h-[150px] my-4" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""></a>
+            <a href="{{ url('/') }}"><img class="rounded-[25px] max-h-[150px] my-4" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""></a>
         </div>
         <div x-data="{open: false}">
             <button x-on:click="open = !open" type="button" class="menuButton z-50 fixed right-0 top-0 inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -283,7 +283,7 @@
                     <textarea class="focus:outline-[#1cdfbc] focus:ring-[#1cdfbc] my-4 w-full rounded-3xl px-8 py-4 font-medium bg-black text-white border-0" rows="3" id="ContactForm-body"  name="question" placeholder="Sua Pergunta" required=""></textarea>
                 </div>
                 <div class="contact__button my-4 md:my-0">
-                    <button class="text-black py-4 md:mx-4 bg-[#1cdfbc] rounded-[4rem] w-[12rem]" type="submit" class="button">
+                    <button class="text-black py-4 md:mx-4 bg-[#1cdfbc] rounded-[15px] w-[12rem]" type="submit" class="button">
                         Enviar
                     </button>
                 </div>
@@ -292,7 +292,7 @@
     </section>
     <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-center bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
-            <img class="rounded-[25px] h-[160px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
+            <img class="rounded-[25px] max-h-[150px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
             <ul class="list-social inline-flex gap-4" role="list">
                 @if($setting[0]['twitter'] != '')
                 <li class="list-social__item">
