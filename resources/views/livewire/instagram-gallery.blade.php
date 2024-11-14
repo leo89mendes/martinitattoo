@@ -10,9 +10,12 @@
     <div x-data="{ scrollY:0, _height:0, final : Math.floor(document.getElementById('instagram').getBoundingClientRect().top + window.scrollY)}" x-init="
         document.addEventListener('scroll', () => {
             _height = document.getElementById('instagram').getBoundingClientRect().height
-            console.log(_height);
             if(window.scrollY >= (final - _height)){
                 $wire.loadMore();
+                if($wire.loaded < 3)
+                {
+                    gallery();
+                }
             }
         })
     " id="instagram" class="grid md:grid-cols-4 grid-cols-2 row-auto md:gap-8 gap-4 cursor-pointer">
