@@ -1,6 +1,6 @@
 <div class="container-xl mx-auto h-[700px] text-white">
     <div class="preloader"></div>
-    <a id="top" href="#totop" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
+    <a id="top" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
         <div class="scroll-text z-20">
             <svg class="flex justify-center items-center" xmlns="http://www.w3.org/2000/svg" width="55" height="57" viewBox="0 0 55 57" fill="none">
                 <path d="M28.1372 50.4229V55.2106H29V56.1512H26.0086V55.2106H26.8643V50.4229H28.1372Z" fill="currentcolor"></path>
