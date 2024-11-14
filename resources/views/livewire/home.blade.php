@@ -156,7 +156,7 @@
             </div>
         </div>
         <div class="md:h-[350px] h-[250px] md:px-0 px-4 flex justify-center items-center md:w-6/12 w-full">
-            <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
     <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] items-center justify-center w-full my-[100px]">
