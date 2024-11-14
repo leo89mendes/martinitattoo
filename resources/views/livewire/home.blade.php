@@ -66,17 +66,17 @@
     </div>
     @endif
     <header>
-        <nav class="menu cursor-pointer hidden md:grid grid-cols-5 py-[1.5rem] md:px-[13rem] text-[0.8rem]">
-            <div class="px-4 grid grid-cols-2 col-span-2 gap-2 text-center items-center font-semibold uppercase">
+        <nav class="menu cursor-pointer hidden md:flex flex-row w-full justify-center items-center py-[2rem] text-[1rem]">
+            <div class="px-8 w-4/12 flex flex-row justify-end items-center gap-16 text-center font-semibold uppercase">
                 <a class="hover:text-[#1cdfbc]" href="#about">Sobre</a>
                 <a class="hover:text-[#1cdfbc]"  href="#portfolio">Portifolio</a>
             </div>
-            <div class="flex justify-center">
-                <a href="{{ url('/') }}"><img class="rounded-[25px] md:h-full h-[100px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""></a>
+            <div>
+                <a href="{{ url('/') }}"><img class="rounded-[25px] bg-center max-h-[150px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""></a>
             </div>
-            <div class="px-4 grid grid-cols-3 col-span-2 gap-2 text-center items-center font-semibold uppercase">
+            <div class="  w-4/12  px-8 flex flex-row justify-start items-center gap-12 text-center font-semibold uppercase">
                 <a class="hover:text-[#1cdfbc]"  href="#contact">Contato</a>
-                <a class='border-2 border-black col-span-2 text-black px-4 py-4 hover:ring-2 hover:ring-offset-2  bg-[#1cdfbc] rounded-[4rem]' href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
+                <a class='border-2 border-black text-black px-4 py-4 hover:ring-2 hover:ring-offset-2  bg-[#1cdfbc] rounded-[25px]' href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
                     FAÇA UM ORÇAMENTO
                 </a> 
             </div>
@@ -134,7 +134,7 @@
                             <h2 class="text-[4rem]">{{$banner['title']}}</h2>
                             <h4>{!! $banner['subtitle'] !!}</h4>
                             <div class="flex justify-center text-[1rem] ">
-                                <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[4rem]'>
+                                <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                                     {{$banner['btn_text']}}
                                 </a> 
                             </div>
@@ -149,7 +149,7 @@
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
             <h1 class=" font-medium text-[2.8rem] mb-4">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
-            <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[4rem]'>
+            <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
                     {{$aboutme[0]['btn_text']}}
                 </a> 
