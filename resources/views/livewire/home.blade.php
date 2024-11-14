@@ -130,11 +130,11 @@
             @foreach($banners as $k => $banner)
                 <div id="banner-{{$k+1}}" class="swiper-slide">
                     <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat bg-center bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
-                        <div class="msg_banner{{$k}} py-10 px-5">
-                            <h2 class="text-[4rem]">{{$banner['title']}}</h2>
-                            <h4>{!! $banner['subtitle'] !!}</h4>
+                        <div class="msg_banner{{$k}} md:w-8/12 px-4 py-4">
+                            <h2 class="text-[3rem]">{{$banner['title']}}</h2>
+                            <h4 class="text-[1.5rem] text-center">{!! $banner['subtitle'] !!}</h4>
                             <div class="flex justify-center text-[1rem] ">
-                                <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
+                                <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 font-semibold hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                                     {{$banner['btn_text']}}
                                 </a> 
                             </div>
