@@ -14,6 +14,7 @@ class InstagramGallery extends Component
     public $end = 8;
     public $loaded = 0; 
     public $limit = 24;
+    public $loading = false;
 
     public function mount(){
         $this->fetchData();
@@ -24,6 +25,7 @@ class InstagramGallery extends Component
             $this->start += 8;
             $this->wrapped($this->saveData, $this->start, $this->end);
             $this->loaded+=1;
+            $this->dispatch('data-loaded');
         }
     }
     public function wrapped($data, $start, $end){

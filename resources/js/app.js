@@ -13,6 +13,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 var swiperBanner;
+var set = [];
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -65,13 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
         init:false,
     });
     //call gallery for portfolio
-    gallery();
+   // gallery();
 });
 //call gallery every time when categorie is clicked
-function gallery(){
-    setTimeout(() => {
-        const galleries = document.querySelectorAll('#gallery_carrousel');
-        galleries.forEach(gallery=>{
+function gallery(el){
+    el.forEach(gallery=>{
+        //console.log(gallery.id);
+        gallery = document.getElementById(gallery.id);
+        if(gallery != null)
+        {
             lightGallery(gallery, {
                 plugins: [lgZoom, lgThumbnail, fullscreen],
                 licenseKey: '0000-0000-000-0000',
@@ -85,21 +88,8 @@ function gallery(){
                 cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)'
                 // ... other settings
             });
-        })
-        lightGallery(document.getElementById("images"), {
-            plugins: [lgZoom, lgThumbnail, fullscreen],
-            licenseKey: '0000-0000-000-0000',
-            speed: 500,
-            controls: true,
-            thumbnail: false,
-            download: false,
-            mode: 'lg-fade',
-            closeOnTap: true,
-            hideScrollbar: true,
-            cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)'
-            // ... other settings
-        });
-    }, 800);
+        }
+    })
 }
 window.gallery = gallery;
 // Site loader
@@ -142,7 +132,10 @@ addEventListener('scroll', (event)=>{
     }
 })
 document.querySelector('#top').addEventListener("click", function(){
-    window.scrollTo.top
+   window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 });
 //END BTN scroller to top
 // Attach click event listeners to menu items
