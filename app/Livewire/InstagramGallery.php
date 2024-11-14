@@ -13,7 +13,7 @@ class InstagramGallery extends Component
     public $start = 0;
     public $end = 8;
     public $loaded = 0; 
-    public $limit = 24;
+    public $limit = 16;
     public $loading = false;
 
     public function mount(){
