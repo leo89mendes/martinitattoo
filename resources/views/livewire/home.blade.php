@@ -145,8 +145,8 @@
         </div>
        
     </div>
-    <section id="about" class="bg-black md:px-8 flex flex-col md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
-        <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-5/12">
+    <section id="about" class="bg-black md:px-8 flex flex-col items-center justify-center md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
+        <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
             <h1 class=" font-medium text-[2.8rem] mb-4">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
             <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[4rem]'>
@@ -155,8 +155,8 @@
                 </a> 
             </div>
         </div>
-        <div class="pb-[20px] md:h-[350px] h-[250px] md:px-0 px-4 block md:w-7/12">
-            <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video']}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="md:h-[350px] h-[250px] md:px-0 px-4 flex justify-center items-center md:w-6/12 w-full">
+            <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
     <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] h-[350px]  items-center justify-center w-full md:text-left text-center md:my-[100px] my-[50px]">
