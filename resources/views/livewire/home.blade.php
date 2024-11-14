@@ -129,7 +129,7 @@
         <div class="swiper-wrapper">
             @foreach($banners as $k => $banner)
                 <div id="banner-{{$k+1}}" class="swiper-slide">
-                    <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full md:py-[8rem] md:pr-[5rem] text-center bg-no-repeat bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
+                    <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat md:bg-cover bg-center" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
                         <div class="msg_banner{{$k}} py-10 px-5">
                             <h2 class="text-[4rem]">{{$banner['title']}}</h2>
                             <h4>{!! $banner['subtitle'] !!}</h4>
