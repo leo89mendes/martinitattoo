@@ -1,6 +1,6 @@
 <div class="container-xl mx-auto h-[700px] text-white">
     <div class="preloader"></div>
-    <a id="top" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
+    <div id="top" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
         <div class="scroll-text z-20">
             <svg class="flex justify-center items-center" xmlns="http://www.w3.org/2000/svg" width="55" height="57" viewBox="0 0 55 57" fill="none">
                 <path d="M28.1372 50.4229V55.2106H29V56.1512H26.0086V55.2106H26.8643V50.4229H28.1372Z" fill="currentcolor"></path>
@@ -24,7 +24,7 @@
             <path d="M10.5 18.9651C11.2893 18.9651 11.9286 18.3259 11.9286 17.5366L11.9286 4.91515L18.0607 11.0473C18.6179 11.6044 19.5214 11.6044 20.0821 11.0473C20.3607 10.7687 20.5 10.4044 20.5 10.0366C20.5 9.66872 20.3607 9.30443 20.0821 9.02586L11.5107 0.454435C11.4429 0.386577 11.3714 0.329435 11.2929 0.275863C11.2571 0.250864 11.2214 0.236579 11.1821 0.21515C11.1357 0.190151 11.0929 0.161577 11.0464 0.14372C11 0.125864 10.95 0.111578 10.9 0.0972915C10.8607 0.0865779 10.8214 0.0687213 10.7786 0.0615783C10.5929 0.0258632 10.4036 0.0258632 10.2179 0.0615783C10.175 0.0687213 10.1357 0.0865779 10.0964 0.0972915C10.0464 0.111578 10 0.122291 9.95 0.14372C9.90357 0.165149 9.85714 0.190151 9.81429 0.21515C9.77857 0.236579 9.73929 0.250864 9.70357 0.275863C9.625 0.329435 9.55357 0.386577 9.48571 0.454435L0.917857 9.02586C0.360714 9.58301 0.360714 10.4901 0.917857 11.0473C1.475 11.6044 2.37857 11.6044 2.93929 11.0473L9.07143 4.91515L9.07143 17.5366C9.07143 18.3259 9.71071 18.9651 10.5 18.9651Z" fill="currentcolor"></path>
             </svg>
         </div>
-    </a>
+    </div>
     @if($errors->all())
     <div id="notification" x-data="{close: false}"  x-show="!close" class="z-50 fixed top-2 right-2 flex bg-[#292b2e] items-center w-full max-w-md bg- p-4 mb-4 text-gray-500 rounded-[25px] shadow">
         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 rounded-[25px]">

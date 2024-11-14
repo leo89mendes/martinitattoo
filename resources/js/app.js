@@ -41,12 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // init Swiper:
-    const carrousel_insta = new Swiper('.carrousel_instagram', {
-        pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true,
-        }
-    });
+    
 
     swiperBanner = new Swiper(".mySwiper", {
         grabCursor: true,
@@ -71,23 +66,31 @@ document.addEventListener('DOMContentLoaded', () => {
 //call gallery every time when categorie is clicked
 function gallery(el){
     el.forEach(gallery=>{
-        //console.log(gallery.id);
-        gallery = document.getElementById(gallery.id);
-        if(gallery != null)
+        if(gallery.media_type == 'CAROUSEL_ALBUM' || gallery.media_type == 'IMAGE')
         {
-            lightGallery(gallery, {
-                plugins: [lgZoom, lgThumbnail, fullscreen],
-                licenseKey: '0000-0000-000-0000',
-                speed: 500,
-                controls: true,
-                thumbnail: false,
-                download: false,
-                mode: 'lg-fade',
-                closeOnTap: true,
-                hideScrollbar: true,
-                cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)'
-                // ... other settings
-            });
+            gallery = document.getElementById(gallery.id);
+            if(gallery != null)
+            {
+                lightGallery(gallery, {
+                    plugins: [lgZoom, lgThumbnail, fullscreen],
+                    licenseKey: '0000-0000-000-0000',
+                    speed: 500,
+                    controls: true,
+                    thumbnail: false,
+                    download: false,
+                    mode: 'lg-fade',
+                    closeOnTap: true,
+                    hideScrollbar: true,
+                    cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)'
+                    // ... other settings
+                });
+                const carrousel_insta = new Swiper('.carrousel_instagram', {
+                    pagination: {
+                        el: ".swiper-pagination",
+                        dynamicBullets: true,
+                    }
+                });
+            }
         }
     })
 }
