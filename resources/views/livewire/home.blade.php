@@ -1,4 +1,4 @@
-<div class="container-xl mx-auto h-[700px] text-white" style="font-family:'Hepta Slab'">
+<div class="container-xl mx-auto h-[700px] text-white">
     <div class="preloader"></div>
     <a id="top" href="#totop" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
         <div class="scroll-text z-20">
@@ -131,7 +131,7 @@
                 <div id="banner-{{$k+1}}" class="swiper-slide">
                     <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat bg-center bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
                         <div class="msg_banner{{$k}} md:w-8/12 px-4 py-4">
-                            <h2 class="text-[3rem]">{{$banner['title']}}</h2>
+                            <h2 class="fontTitle text-[3rem]">{{$banner['title']}}</h2>
                             <h4 class="text-[1.5rem] text-center">{!! $banner['subtitle'] !!}</h4>
                             <div class="flex justify-center text-[1rem] ">
                                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 font-semibold hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
@@ -147,7 +147,7 @@
     </div>
     <section id="about" class="bg-black md:px-8 flex flex-col items-center justify-center md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
-            <h1 class=" font-medium text-[2.8rem] mb-4">{{$aboutme[0]['title']}}</h1>
+            <h1 class="fontTitle font-medium text-[2.5rem] mb-4">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
             <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
@@ -159,20 +159,14 @@
             <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
-    <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] h-[350px]  items-center justify-center w-full md:text-left text-center md:my-[100px] my-[50px]">
-        <iframe class="grayscale hover:grayscale-0 flex" width="100%" height="100%" src="{{$video[0]['link']}}" controls="0" autoplay="1" title="YouTube video player" frameborder="0"  allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            <button>
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="114px" height="150px" viewBox="0 0 114 150" enable-background="new 0 0 114 150" xml:space="preserve">
-                    <polygon fill="none" stroke="#fff" stroke-width="2" stroke-miterlimit="10" points="3.166,3.67 110.5,74.608 3.007,145.307 "></polygon>
-                </svg>
-            </button>
-        </iframe>
+    <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] items-center justify-center w-full my-[100px]">
+        <iframe class="grayscale hover:grayscale-0 flex" width="100%" height="100%" src="{{$video[0]['link'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" controls="0" autoplay="1" title="YouTube video player" frameborder="0"  allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
     <!-- INSTAGRAM GOES HERE -->
     <livewire:instagram-gallery />
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
         <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
-        <h1 class=" font-medium text-[2.8rem] text-center w-full">
+        <h1 class="fontTitle text-[2.5rem] text-center w-full">
             Clientes Feedback
         </h1>
         <div class="swiper">
