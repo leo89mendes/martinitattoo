@@ -29,7 +29,8 @@ class InstagramGallery extends Component
         }
     }
     public function wrapped($data, $start, $end){
-        $this->allMedia =  array_slice($data, $start, $end);
+        //$this->allMedia =  array_slice($data, $start, $end);
+        $this->allMedia = $data;
         $arr = [];
         foreach ($this->allMedia as $k => $v) {
             if($v['media_type'] === 'CAROUSEL_ALBUM')

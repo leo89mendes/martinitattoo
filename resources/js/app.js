@@ -41,7 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // init Swiper:
-    
+    const carrousel_insta = new Swiper('.carrousel_instagram', {
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        }
+    });
 
     swiperBanner = new Swiper(".mySwiper", {
         grabCursor: true,
@@ -83,12 +88,6 @@ function gallery(el){
                     hideScrollbar: true,
                     cssEasing : 'cubic-bezier(0.25, 0, 0.25, 1)'
                     // ... other settings
-                });
-                const carrousel_insta = new Swiper('.carrousel_instagram', {
-                    pagination: {
-                        el: ".swiper-pagination",
-                        dynamicBullets: true,
-                    }
                 });
             }
         }

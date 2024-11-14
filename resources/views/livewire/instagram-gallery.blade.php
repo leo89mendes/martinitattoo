@@ -7,23 +7,8 @@
         <div @click="$wire.getCategory('VIDEOS')" id="cat" class="{{ $cat === 'VIDEOS'   ? 'cursor-pointer md:my-0 my-2 px-10 py-4 bg-[#1cdfbc] text-black border-2 border-black rounded-[4rem] hover:ring-2 hover:ring-offset-2' : 'md:my-0 my-2 hover:ring-2 border-2 border-black hover:ring-offset-2 hover:bg-[#1cdfbc] cursor-pointer hover:text-black  px-10 py-4 bg-[#333333] rounded-[4rem]' }}">Vídeos</div>
         <div @click="$wire.getCategory('IMAGES')" id="cat" class="{{ $cat === 'IMAGES'  ? 'cursor-pointer md:my-0 my-2 px-10 py-4 bg-[#1cdfbc] text-black border-2 border-black rounded-[4rem] hover:ring-2 hover:ring-offset-2' : 'md:my-0 my-2 hover:ring-2 border-2 border-black hover:ring-offset-2 hover:bg-[#1cdfbc] cursor-pointer hover:text-black  px-10 py-4 bg-[#333333] rounded-[4rem]' }}">Imagens</div>
     </div>-->
-    <div x-data="{ count: 0, contador: 0,  scrollY:0, _height:0, final : Math.floor(document.getElementById('instagram').getBoundingClientRect().top + window.scrollY)}" x-init="
-        document.addEventListener('scroll', () => {
-            _height = document.getElementById('instagram').getBoundingClientRect().height
-            if(window.scrollY >= (final - _height)){
-                $wire.loadMore();
-            }
-        })
-        Livewire.on('data-loaded', event => {
-            if(contador < 3)
-            {
-                setTimeout(()=>{
-                    gallery($wire.result.slice(count,(count > 0 ? count*2 : 8)));
-                    count+=8;
-                }, 1000)
-                contador+=1;  
-            }
-        })
+    <div x-data="{ }" x-init="
+        gallery($wire.result);
     " id="instagram" class="grid md:grid-cols-4 grid-cols-2 row-auto md:gap-8 gap-4 cursor-pointer mt-[1.5rem]">
         @if($status === 'success')
             @foreach($result as $key => $insta)
