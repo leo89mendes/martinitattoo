@@ -147,7 +147,7 @@
     </div>
     <section id="about" class="bg-black md:px-8 flex flex-col items-center justify-center md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
-            <h1 class="bebas font-medium text-[2.5rem] mb-4">{{$aboutme[0]['title']}}</h1>
+            <h1 class="bebas font-medium text-[2.5rem] mb-4 uppercase">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
             <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
@@ -166,7 +166,7 @@
     <livewire:instagram-gallery />
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
         <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
-        <h1 class="bebas text-[2.5rem] text-center w-full">
+        <h1 class="bebas text-[2.5rem] text-center w-full uppercase">
             Clientes Feedback
         </h1>
         <div class="swiper">
@@ -179,11 +179,11 @@
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <cite class="flex flex-col justify-center items-center">
-                                <p class="testimonial-author text-[#9f9f9f]">{{ $testi->name }}</p>
+                                <p class="testimonial-author text-white">{{ $testi->name }}</p>
                                 <span>{{ $testi->position }}</span>
                             </cite>
                         </div>
-                        <div class="px-[5rem] text-[#9f9f9f] text-center">
+                        <div class="px-[5rem] text-white text-center">
                             {!! $testi->description !!}
                         </div>
                     </div>
