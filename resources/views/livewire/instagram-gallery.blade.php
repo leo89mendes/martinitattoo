@@ -13,7 +13,10 @@
         @if($status === 'success')
             @foreach($result as $key => $insta)
                 @if($insta['media_type'] === "VIDEO")
-                    <video class="lazy gfade max-h-[350px] grayscale hover:grayscale-0 object-cover rounded-[25px]" data-src="{{$insta['media_url']}}"  type="video/mp4" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}"></video>
+                    <div class="grayscale hover:grayscale-0">
+                        <video class="lazy gfade max-h-[350px] object-cover rounded-[25px]" data-src="{{$insta['media_url']}}"  type="video/mp4" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}"></video>
+                    </div>
+                    
                 @elseif($insta['media_type'] === "IMAGE")
                     <div id="{{ $insta['id'] }}" class="gfade h-[350px]">
                         <figure class="object-cover grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
