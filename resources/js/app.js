@@ -18,6 +18,7 @@ var set = [];
 document.addEventListener('DOMContentLoaded', () => {
     const lazyImages = document.querySelectorAll("img.lazy");
     const lazyVideos = document.querySelectorAll("video.lazy")
+    const iframeVideos = document.querySelectorAll("iframe.lazy")
 
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -36,6 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
     lazyVideos.forEach(video => {
         imageObserver.observe(video);
     });
+
+    iframeVideos.forEach(video => {
+        imageObserver.observe(video);
+    });
+    
     lightGallery(document.getElementById('open-google-map'), {
         selector: 'this',
         download: false,

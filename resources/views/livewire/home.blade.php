@@ -143,7 +143,6 @@
                 </div>
             @endforeach
         </div>
-       
     </div>
     <section id="about" class="bg-black md:px-8 flex flex-col items-center justify-center md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
@@ -156,11 +155,11 @@
             </div>
         </div>
         <div class="md:h-[350px] h-[250px] md:px-0 px-4 flex justify-center items-center md:w-6/12 w-full">
-            <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="lazy grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" data-src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
     <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] items-center justify-center w-full my-[100px]">
-        <iframe class="grayscale hover:grayscale-0 flex" width="100%" height="100%" src="{{$video[0]['link'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" controls="0" autoplay="1" title="YouTube video player" frameborder="0"  allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe class="lazy grayscale hover:grayscale-0 flex" width="100%" height="100%" data-src="{{$video[0]['link'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" controls="0" autoplay="1" title="YouTube video player" frameborder="0"  allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
     <!-- INSTAGRAM GOES HERE -->
     <livewire:instagram-gallery />
