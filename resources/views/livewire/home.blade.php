@@ -286,7 +286,7 @@
     </section>
     <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-center bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
-            <img class="rounded-[25px] max-h-[150px]" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
+            <img class="lazy rounded-[25px] max-h-[150px]" data-src="{{ asset('storage/' . $setting[0]->logo) }}" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
             <ul class="list-social inline-flex gap-4" role="list">
                 @if($setting[0]['twitter'] != '')
                 <li class="list-social__item">
