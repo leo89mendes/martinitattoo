@@ -1,5 +1,5 @@
 <section id="portfolio" class="md:px-8 px-4 instagram bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px]">
-    <h1 class="fontTitle text-[2.5rem] text-center w-full">
+    <h1 class="bebas text-[2.5rem] text-center w-full">
         <a target="_blank" href="https://instagram.com/martinitattoo">Portifolio</a>
     </h1>
    <!-- <div @click="gallery" class="buttons_portfolio flex md:flex-row flex-col justify-around font-semibold text-[1rem] my-10 mx-4 md:mx-0">
@@ -13,13 +13,13 @@
         @if($status === 'success')
             @foreach($result as $key => $insta)
                 @if($insta['media_type'] === "VIDEO")
-                    <video class="gfade grayscale hover:grayscale-0 h-[350px] object-cover rounded-[25px]" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}">
+                    <video class="gfade max-h-[350px] grayscale hover:grayscale-0 object-cover rounded-[25px]" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}">
                         <source src="{{$insta['media_url']}}" type="video/mp4">
                         <source src="{{$insta['media_url']}}" type="video/ogg">                    
                     </video>
                 @elseif($insta['media_type'] === "IMAGE")
-                    <div id="{{ $insta['id'] }}" class="gfade">
-                        <figure class="object-cover grayscale hover:grayscale-0 h-[350px]" data-src="{{$insta['media_url']}}">
+                    <div id="{{ $insta['id'] }}" class="gfade h-[350px]">
+                        <figure class="object-cover grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
                             <img class="rounded-[25px] h-full" src="{{$insta['media_url']}}" alt="">
                         </figure>
                     </div>
@@ -27,8 +27,8 @@
                     <div  class="gfade carrousel_instagram overflow-hidden h-full w-full">
                         <div id="{{ $insta['id'] }}" class="swiper-wrapper">
                             @foreach($insta['carrousel'] as $carrousel)
-                            <div class="swiper-slide grayscale hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
-                                <figure class="object-cover h-[350px]">
+                            <div class="swiper-slide grayscale h-[350px] hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
+                                <figure class="object-cover">
                                     <img class="rounded-[25px] h-full" src="{{$carrousel['media_url']}}" alt="">
                                 </figure>
                             </div>

@@ -15,6 +15,7 @@
         <meta property="og:description" content="A mais de 15 anos fazendo todos os tipos de tatuagem.">
         <meta property="og:url" content="https://www.martinitattoo.com">
         <meta property="og:image" content="{{ asset('storage/assets/img/theme.jpg') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <title>Martini Tattoo</title>
         <style>
             [x-cloak] {

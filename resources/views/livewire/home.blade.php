@@ -1,4 +1,4 @@
-<div class="container-xl mx-auto h-[700px] text-white">
+<div class="container-xl mx-auto h-[700px] text-white Roboto">
     <div class="preloader"></div>
     <div id="top" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
         <div class="scroll-text z-20">
@@ -131,7 +131,7 @@
                 <div id="banner-{{$k+1}}" class="swiper-slide">
                     <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat bg-center bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
                         <div class="msg_banner{{$k}} md:w-8/12 px-4 py-4">
-                            <h2 class="fontTitle text-[3rem]">{{$banner['title']}}</h2>
+                            <h2 class="bebas text-[3rem]">{{$banner['title']}}</h2>
                             <h4 class="text-[1.5rem] text-center">{!! $banner['subtitle'] !!}</h4>
                             <div class="flex justify-center text-[1rem] ">
                                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class='hover:border-2 font-semibold hover:border-black hover:ring-2 hover:ring-offset-2  text-black h-[60px]  p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
@@ -147,7 +147,7 @@
     </div>
     <section id="about" class="bg-black md:px-8 flex flex-col items-center justify-center md:flex-row md:text-left text-center gap-4 md:my-[100px] my-[50px]">
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
-            <h1 class="fontTitle font-medium text-[2.5rem] mb-4">{{$aboutme[0]['title']}}</h1>
+            <h1 class="bebas font-medium text-[2.5rem] mb-4">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
             <div class='cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
@@ -166,7 +166,7 @@
     <livewire:instagram-gallery />
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
         <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
-        <h1 class="fontTitle text-[2.5rem] text-center w-full">
+        <h1 class="bebas text-[2.5rem] text-center w-full">
             Clientes Feedback
         </h1>
         <div class="swiper">
@@ -175,7 +175,7 @@
                     <div class="swiper-slide">
                         <div class="py-4 flex justify-center align-center gap-4">
                             <div class="testimonial-image max-w-[5rem]">
-                                <img class="cover rounded-full" src="{{ asset('storage/' . $testi->image)}}" loading="lazy">
+                                <img class="cover rounded-full" alt="{{ $testi->name }}" src="{{ asset('storage/' . $testi->image)}}" loading="lazy">
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <cite class="flex flex-col justify-center items-center">
@@ -211,7 +211,7 @@
                             </svg>
                         </span>
                         <div class="details-wrapper text-left">  
-                            <h6 class="contact-heading font-semibold">Endereço</h6> 
+                            <h3 class="contact-heading font-semibold">Endereço</h3> 
                             <address>{{ $setting[0]->address }}</address>
                         </div>
                     </button>
@@ -232,7 +232,7 @@
                             </svg>
                         </span>
                         <div class="details-wrapper">  
-                            <h6 class="contact-heading font-semibold">E-mail</h6>  
+                            <h3 class="contact-heading font-semibold">E-mail</h3>  
                             <span>{{ $setting[0]->email }}@martinitattoo.com</span>
                         </div> 
                     </a>   
@@ -254,7 +254,7 @@
                             </svg>
                         </span>
                         <div class="details-wrapper">  
-                            <h6 class="contact-heading font-semibold">What's App</h6> 
+                            <h3 class="contact-heading font-semibold">What's App</h3> 
                             +55 {{ $setting[0]->telephone }}
                         </div>
                     </a>

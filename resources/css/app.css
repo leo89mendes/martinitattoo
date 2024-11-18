@@ -96,14 +96,17 @@ body{
   font-family: "BebasKai";
   font-style: normal;
   font-weight: bold;
-  src: url(/storage/app/public/assets/fonts/BebasKai.ttf) format('ttf');
+  src: url(/storage/app/public/assets/fonts/BebasKai.ttf);
 }
 body {
   font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(/storage/app/public/assets/fonts/Roboto-Regular.ttf) format('ttf');
 }
 
+
+@font-face {
+  font-family: 'Bebaskai';
+  src: url('./assets/fonts/BebasKai.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
 

@@ -7,4 +7,11 @@ export default {
         './resources/views/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
     ],
+    theme: {
+        extend: {
+            fontFamily: {
+                bebas: ['"Bebaskai"', 'sans-serif'],
+            },
+        },
+    },
 }
