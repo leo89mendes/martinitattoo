@@ -129,7 +129,7 @@
         <div class="swiper-wrapper">
             @foreach($banners as $k => $banner)
                 <div id="banner-{{$k+1}}" class="swiper-slide">
-                    <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat bg-center bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
+                    <div id="slide{{$k}}" class="overflow-hidden justify-center flex flex-col h-[500px] w-full items-center text-center bg-no-repeat bg-left-top bg-cover" style="background-image: url({{ asset('storage/' . $banner['img']) }});">
                         <div class="msg_banner{{$k}} md:w-8/12 px-4 py-4">
                             <h2 class="bebas text-[3rem]">{{$banner['title']}}</h2>
                             <h4 class="text-[1.5rem] text-center">{!! $banner['subtitle'] !!}</h4>
@@ -283,7 +283,7 @@
             </form>
         </div>
     </section>
-    <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-center bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
+    <section class="footer flex flex-col justify-center items-center text-center md:text-left bg-left-top bg-cover bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
             <img class="lazy rounded-[25px] max-h-[150px]" data-src="{{ asset('storage/' . $setting[0]->logo) }}" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
             <ul class="list-social inline-flex gap-4" role="list">
