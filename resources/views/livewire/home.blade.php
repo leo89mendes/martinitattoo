@@ -165,8 +165,8 @@
     <!-- INSTAGRAM GOES HERE -->
     <livewire:instagram-gallery />
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
-        <span class="font-medium text-white text-center">Testimoniais</span>
-        <h1 class="bebas text-[2.5rem] text-[#1cdfbc] text-center w-full uppercase">
+        <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
+        <h1 class="bebas text-[2.5rem] text-center w-full uppercase">
             Clientes Feedback
         </h1>
         <div class="swiper">
@@ -175,12 +175,12 @@
                     <div class="swiper-slide">
                         <div class="py-4 flex justify-center align-center gap-4">
                             <div class="testimonial-image max-w-[5rem]">
-                                <img class="lazy cover rounded-full" alt="{{ $testi->name }}" data-src="{{ asset('storage/' . $testi->image)}}" src="{{ asset('storage/' . $testi->image)}}">
+                                <img class="lazy cover rounded-full" alt="{{ $testi->name }}"  data-src="{{ asset('storage/' . $testi->image)}}" src="{{ asset('storage/' . $testi->image)}}">
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <cite class="flex flex-col justify-center items-center">
-                                <p class="testimonial-author text-[#1cdfbc]">{{ $testi->name }}</p>
-                                <span class="text-[#1cdfbc]">{{ $testi->position }}</span>
+                                <p class="testimonial-author text-white">{{ $testi->name }}</p>
+                                <span>{{ $testi->position }}</span>
                             </cite>
                         </div>
                         <div class="px-[5rem] text-white text-center">
