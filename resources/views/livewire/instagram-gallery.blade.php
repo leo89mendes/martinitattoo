@@ -13,14 +13,11 @@
         @if($status === 'success')
             @foreach($result as $key => $insta)
                 @if($insta['media_type'] === "VIDEO")
-                    <video class="gfade max-h-[350px] grayscale hover:grayscale-0 object-cover rounded-[25px]" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}">
-                        <source src="{{$insta['media_url']}}" type="video/mp4">
-                        <source src="{{$insta['media_url']}}" type="video/ogg">                    
-                    </video>
+                    <video class="lazy gfade max-h-[350px] grayscale hover:grayscale-0 object-cover rounded-[25px]" data-src="{{$insta['media_url']}}"  type="video/mp4" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}"></video>
                 @elseif($insta['media_type'] === "IMAGE")
                     <div id="{{ $insta['id'] }}" class="gfade h-[350px]">
                         <figure class="object-cover grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
-                            <img class="rounded-[25px] h-full" src="{{$insta['media_url']}}" alt="">
+                            <img class="lazy rounded-[25px] h-full" data-src="{{$insta['media_url']}}" alt="">
                         </figure>
                     </div>
                 @elseif(isset($insta['carrousel']))
@@ -29,7 +26,7 @@
                             @foreach($insta['carrousel'] as $carrousel)
                             <div class="swiper-slide grayscale h-[350px] hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
                                 <figure class="object-cover">
-                                    <img class="rounded-[25px] h-full" src="{{$carrousel['media_url']}}" alt="">
+                                    <img class="lazy rounded-[25px] h-full" data-src="{{$carrousel['media_url']}}" alt="">
                                 </figure>
                             </div>
                             @endforeach

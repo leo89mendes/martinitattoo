@@ -102,7 +102,13 @@ body {
   font-family: 'Roboto';
 }
 
-
+.lazy {
+  filter: blur(5px);
+  transition: filter 0.3s;
+}
+.lazy.loaded {
+  filter: none;
+}
 @font-face {
   font-family: 'Bebaskai';
   src: url('./assets/fonts/BebasKai.ttf') format('ttf');
