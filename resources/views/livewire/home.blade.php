@@ -155,7 +155,7 @@
             </div>
         </div>
         <div class="md:h-[350px] h-[250px] md:px-0 px-4 flex justify-center items-center md:w-6/12 w-full">
-            <iframe class="lazy grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" data-src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe class="lazy grayscale hover:grayscale-0 rounded-[25px] block" width="100%" height="100%" data-src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
     <!-- <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] items-center justify-center w-full my-[100px]">
@@ -174,7 +174,7 @@
                     <div class="swiper-slide">
                         <div class="py-4 flex justify-center align-center gap-4">
                             <div class="testimonial-image max-w-[5rem]">
-                                <img class="lazy cover rounded-full" alt="{{ $testi->name }}"  data-src="{{ asset('storage/' . $testi->image)}}" src="{{ asset('storage/' . $testi->image)}}">
+                                <img class="lazy cover rounded-full" height="100%" width="100%" alt="{{ $testi->name }}"  data-src="{{ asset('storage/' . $testi->image)}}" src="{{ asset('storage/' . $testi->image)}}">
                                 <div class="swiper-lazy-preloader"></div>
                             </div>
                             <cite class="flex flex-col justify-center items-center">
@@ -285,7 +285,7 @@
     </section>
     <section class="footer flex flex-col justify-center items-center text-center md:text-left md:bg-left-top bg-center bg-no-repeat w-full bg-cover" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
-            <img class="lazy rounded-[25px] max-h-[150px]" data-src="{{ asset('storage/' . $setting[0]->logo) }}" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
+            <img class="lazy rounded-[25px] max-h-[150px]" height="100%" width="100%" data-src="{{ asset('storage/' . $setting[0]->logo) }}" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
             <ul class="list-social inline-flex gap-4" role="list">
                 @if($setting[0]['twitter'] != '')
                 <li class="list-social__item">
