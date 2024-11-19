@@ -148,7 +148,7 @@
         <div class="about_me flex flex-col md:items-start items-center justify-center px-8 md:py-0 py-8 md:w-6/12 w-full">
             <h1 class="bebas font-medium text-[2.5rem] mb-4 uppercase">{{$aboutme[0]['title']}}</h1>
             <div>{!! $aboutme[0]['description'] !!}</div>
-            <div class='font-semibold cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[13.5rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
+            <div class='font-semibold cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[14rem] border-black text-black p-4 mt-4 bg-[#1cdfbc] rounded-[25px]'>
                 <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank">
                     {{$aboutme[0]['btn_text']}}
                 </a> 
