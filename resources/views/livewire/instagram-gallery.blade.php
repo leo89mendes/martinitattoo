@@ -15,7 +15,7 @@
                 @elseif($insta['media_type'] === "IMAGE")
                     <div id="{{ $insta['id'] }}" class="gfade">
                         <figure class="grayscale hover:grayscale-0 h-full" data-src="{{$insta['media_url']}}">
-                            <img class="lazy rounded-[25px] object-cover h-full" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
+                            <img class="lazy rounded-[25px] object-cover h-full bg-center" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
                         </figure>
                     </div>
                 @elseif(isset($insta['carrousel']))
@@ -24,7 +24,7 @@
                             @foreach($insta['carrousel'] as $carrousel)
                             <div class="swiper-slide grayscale hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
                                 <figure class="h-full">
-                                    <img class="lazy rounded-[25px] object-cover h-full"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
+                                    <img class="lazy rounded-[25px] object-cover h-full bg-center"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
                                 </figure>
                             </div>
                             @endforeach
