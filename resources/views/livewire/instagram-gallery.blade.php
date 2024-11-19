@@ -9,13 +9,13 @@
             @foreach($result as $key => $insta)
                 @if($insta['media_type'] === "VIDEO")
                     <div class="grayscale hover:grayscale-0 ">
-                        <video class="lazy gfade max-h-[350px] object-cover rounded-[25px]" data-src="{{$insta['media_url']}}"  type="video/mp4" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}"></video>
+                        <video class="lazy gfade object-fill rounded-[25px]" data-src="{{$insta['media_url']}}"  type="video/mp4" width="100%" height="100%" controls poster="{{$insta['thumbnail_url']}}"></video>
                     </div>
                     
                 @elseif($insta['media_type'] === "IMAGE")
                     <div id="{{ $insta['id'] }}" class="gfade">
-                        <figure class="grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
-                            <img class="lazy rounded-[25px] object-cover" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
+                        <figure class="grayscale hover:grayscale-0 h-full" data-src="{{$insta['media_url']}}">
+                            <img class="lazy rounded-[25px] object-cover h-full w-full" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
                         </figure>
                     </div>
                 @elseif(isset($insta['carrousel']))
@@ -23,8 +23,8 @@
                         <div id="{{ $insta['id'] }}" class="swiper-wrapper">
                             @foreach($insta['carrousel'] as $carrousel)
                             <div class="swiper-slide grayscale hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
-                                <figure>
-                                    <img class="lazy rounded-[25px] object-cover"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
+                                <figure class="h-full">
+                                    <img class="lazy rounded-[25px] object-cover h-full w-full"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
                                 </figure>
                             </div>
                             @endforeach
