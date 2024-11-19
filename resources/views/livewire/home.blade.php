@@ -283,7 +283,7 @@
             </form>
         </div>
     </section>
-    <section class="footer flex flex-col justify-center items-center text-center md:text-left md:bg-left-top bg-center bg-no-repeat w-full" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
+    <section class="footer flex flex-col justify-center items-center text-center md:text-left md:bg-left-top bg-center bg-no-repeat w-full bg-cover" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
             <img class="lazy rounded-[25px] max-h-[150px]" data-src="{{ asset('storage/' . $setting[0]->logo) }}" src="{{ asset('storage/' . $setting[0]->logo) }}" alt=""> 
             <ul class="list-social inline-flex gap-4" role="list">
@@ -333,7 +333,7 @@
                 @endif
             </ul>
         </div>
-        <div class="bg-black w-full p-4 flex md:flex-row felx-col justify-center items-center text-white">
+        <div class="bg-black w-full p-4 flex md:flex-row felx-col md:text-[0.9rem] text-[0.8rem] justify-center items-center text-white">
             Todos os Direitos Reservados © 2024 – Desenvolvido por <a class="px-2 hover:text-[#1cdfbc]" href="https://dreamsintocodes.com" target="_blank"> Dreams Into Codes</a>
         </div>
     </section>

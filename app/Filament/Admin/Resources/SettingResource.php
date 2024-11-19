@@ -54,7 +54,7 @@ class SettingResource extends Resource
                 ->imageEditor()
                 ->imageResizeMode('cover')
                 ->imageEditorViewportWidth('1920')
-                ->imageEditorViewportHeight('1080')
+                ->imageEditorViewportHeight('350')
                 ->imageCropAspectRatio('16:9')
                 ->imageEditorMode(3)
                 ->downloadable()
