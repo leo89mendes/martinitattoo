@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selector: 'this',
         download: false,
         closeOnTap: true,
+        closable:true,
         hideScrollbar: true,
     });
     
