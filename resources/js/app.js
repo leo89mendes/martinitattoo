@@ -16,80 +16,26 @@ var swiperBanner;
 var set = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    const lazyImages = document.querySelectorAll("img.lazy");
-    const lazyVideos = document.querySelectorAll("video.lazy")
+    const cookieBanner = document.getElementById("cookie-banner");
+    const acceptButton = document.getElementById("accept-cookies");
+    const declineButton = document.getElementById("decline-cookies");
+    console.log(localStorage.getItem("cookieConsent"))
+    // Check if cookies consent is already given
+    if (localStorage.getItem("cookieConsent") == "accepted") {
+        cookieBanner.style.display = "none";
+    }
 
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.src = img.dataset.src;
-          img.classList.add("loaded");
-          observer.unobserve(img);
-        }
-      });
-    });
-  
-    lazyImages.forEach(img => {
-      imageObserver.observe(img);
-    });
-    lazyVideos.forEach(video => {
-        imageObserver.observe(video);
-    });
-    lightGallery(document.getElementById('open-google-map'), {
-        selector: 'this',
-        download: false,
-        closeOnTap: true,
-        closable:true,
-        mobileSettings:{
-            showCloseIcon: true
-        },
-        hideScrollbar: true,
-    });
-    
-    // init Swiper:
-    const testimonials = new Swiper('.swiper', {
-        // configure Swiper to use modules
-        loop: true,
-        speed:800,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        on:{
-            init: function (){
-               // document.getElementsByClassName('.swiper-slide').style.display = 'flex'
-            }
-        }
+    // Handle Accept Button
+    acceptButton.addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "accepted");
+        cookieBanner.style.display = "none";
     });
 
-    // init Swiper:
-    const carrousel_insta = new Swiper('.carrousel_instagram', {
-        pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true,
-        }
+    // Handle Decline Button
+    declineButton.addEventListener("click", () => {
+        localStorage.setItem("cookieConsent", "declined");
+        cookieBanner.style.display = "none";
     });
-
-    swiperBanner = new Swiper(".mySwiper", {
-        grabCursor: true,
-        loop:true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        speed: 3000,
-        effect: "cube",
-        cubeEffect: {
-            shadow: true,
-            slideShadows: true,
-            shadowOffset: 20,
-            shadowScale: 0.94,
-        },
-        init:false,
-    });
-    //call gallery for portfolio
-   // gallery();
 });
 //call gallery every time when categorie is clicked
 function gallery(el){
@@ -128,13 +74,85 @@ function loading (){
         clearInterval(int)
         document.querySelector('body').classList.add('overflow-y-auto')
         document.querySelector('.preloader').style.display = 'none';
-        swiperBanner.init();
+       // swiperBanner.init();
         if(document.getElementById("notification") != null)
         {
             setTimeout(() => {
                 document.getElementById("notification").style.visibility = 'hidden';
             }, 8000);
         }
+        const lazyImages = document.querySelectorAll("img.lazy");
+        const lazyVideos = document.querySelectorAll("video.lazy")
+    
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.src;
+              img.classList.add("loaded");
+              observer.unobserve(img);
+            }
+          });
+        });
+      
+        lazyImages.forEach(img => {
+          imageObserver.observe(img);
+        });
+        lazyVideos.forEach(video => {
+            imageObserver.observe(video);
+        });
+        lightGallery(document.getElementById('open-google-map'), {
+            selector: 'this',
+            download: false,
+            closeOnTap: true,
+            closable:true,
+            mobileSettings:{
+                showCloseIcon: true
+            },
+            hideScrollbar: true,
+        });
+        
+        // init Swiper:
+        const testimonials = new Swiper('.swiper', {
+            // configure Swiper to use modules
+            loop: true,
+            speed:800,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            on:{
+                init: function (){
+                   // document.getElementsByClassName('.swiper-slide').style.display = 'flex'
+                }
+            }
+        });
+    
+        // init Swiper:
+        const carrousel_insta = new Swiper('.carrousel_instagram', {
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true,
+            }
+        });
+    
+        swiperBanner = new Swiper(".mySwiper", {
+            grabCursor: true,
+            loop:true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            speed: 3000,
+            effect: "cube",
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+            init:true,
+        });
     }
 }
 int = setInterval(loading, 200)

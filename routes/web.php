@@ -1,5 +1,6 @@
 <?php
 use App\Livewire\Home;
+use App\Livewire\Policy;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->name('home');
 Route::post('send-mail', [MailController::class, 'store'])->name('send-mail');
+Route::get('policy-procedures', Policy::class)->name('policy-procedures');

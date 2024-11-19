@@ -283,7 +283,7 @@
             </form>
         </div>
     </section>
-    <section class="footer flex flex-col justify-center items-center text-center md:text-left md:bg-left-top bg-center bg-no-repeat w-full bg-cover" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
+    <footer class="footer flex flex-col justify-center items-center text-center md:text-left md:bg-left-top bg-center bg-no-repeat w-full bg-cover" style="background-image: url({{ asset('storage/' . $setting[0]['bg_footer']) }})">
         <div class="flex flex-col items-center gap-4 py-8">
             <img class="lazy rounded-[25px] max-h-[150px]" height="150px" data-src="{{ asset('storage/' . $setting[0]->logo) }}" alt="logo"> 
             <ul class="list-social inline-flex gap-4" role="list">
@@ -336,5 +336,23 @@
         <div class="bg-black w-full p-4 flex md:flex-row flex-col md:text-[0.9rem] text-[0.8rem] justify-center items-center text-white">
             Todos os Direitos Reservados © 2024 – Desenvolvido por <a class="px-2 hover:text-[#1cdfbc]" href="https://dreamsintocodes.com" target="_blank"> Dreams Into Codes</a>
         </div>
-    </section>
+    </footer>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class=" w-11/12 bottom-2 rounded-[25px] fixed left-1/2 transform -translate-x-1/2 bg-[#292b2e] text-white p-4 flex flex-col md:flex-row items-center justify-between z-[999] shadow-lg">
+        <div class="mb-3 md:mb-0">
+        <p class="text-sm md:text-base">
+            Utilizamos cookies para melhorar sua experiência. Ao usar nosso site, você concorda com a nossa
+            <a href="policy-procedures" target="_blank" class="text-indigo-400 underline">Política de Privacidade</a>.
+        </p>
+        </div>
+        <div class="flex space-x-2">
+        <button id="accept-cookies" class="cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[14rem] border-black text-black p-4 bg-[#1cdfbc] rounded-[25px]">
+            Aceitar
+        </button>
+        <button id="decline-cookies" class="cursor-pointer bg-gray-600 hover:ring-2 hover:ring-offset-2 border-2 border-gray-600 text-sm md:text-base text-white px-4 py-2 rounded-[25px]">
+            Recusar
+        </button>
+        </div>
+    </div>
+  <!-- Cookie Consent Banner -->
 </div>
