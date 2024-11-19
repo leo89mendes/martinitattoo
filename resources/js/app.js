@@ -18,22 +18,13 @@ var set = [];
 document.addEventListener('DOMContentLoaded', () => {
     const cookieBanner = document.getElementById("cookie-banner");
     const acceptButton = document.getElementById("accept-cookies");
-    const declineButton = document.getElementById("decline-cookies");
-    console.log(localStorage.getItem("cookieConsent"))
     // Check if cookies consent is already given
     if (localStorage.getItem("cookieConsent") == "accepted") {
         cookieBanner.style.display = "none";
     }
-
     // Handle Accept Button
     acceptButton.addEventListener("click", () => {
         localStorage.setItem("cookieConsent", "accepted");
-        cookieBanner.style.display = "none";
-    });
-
-    // Handle Decline Button
-    declineButton.addEventListener("click", () => {
-        localStorage.setItem("cookieConsent", "declined");
         cookieBanner.style.display = "none";
     });
 });

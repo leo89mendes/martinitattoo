@@ -338,19 +338,16 @@
         </div>
     </footer>
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class=" w-11/12 bottom-2 rounded-[25px] fixed left-1/2 transform -translate-x-1/2 bg-[#292b2e] text-white p-4 flex flex-col md:flex-row items-center justify-between z-[999] shadow-lg">
+    <div id="cookie-banner" class=" w-11/12 bottom-2 rounded-[25px] fixed left-1/2 transform -translate-x-1/2 bg-[#292b2e] text-white p-4 flex flex-col md:flex-row items-center justify-around z-[999] shadow-lg">
         <div class="mb-3 md:mb-0">
         <p class="text-sm md:text-base">
             Utilizamos cookies para melhorar sua experiência. Ao usar nosso site, você concorda com a nossa
             <a href="policy-procedures" target="_blank" class="text-indigo-400 underline">Política de Privacidade</a>.
         </p>
         </div>
-        <div class="flex space-x-2">
-        <button id="accept-cookies" class="cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 max-w-[14rem] border-black text-black p-4 bg-[#1cdfbc] rounded-[25px]">
+        <div class="flex">
+        <button id="accept-cookies" class="mx-2 cursor-pointer hover:ring-2 hover:ring-offset-2 border-2 border-[#1cdfbc] text-black px-8 py-4 bg-[#1cdfbc] rounded-[25px]">
             Aceitar
-        </button>
-        <button id="decline-cookies" class="cursor-pointer bg-gray-600 hover:ring-2 hover:ring-offset-2 border-2 border-gray-600 text-sm md:text-base text-white px-4 py-2 rounded-[25px]">
-            Recusar
         </button>
         </div>
     </div>
