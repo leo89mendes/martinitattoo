@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageObserver.observe(video);
     });
     lightGallery(document.getElementById('open-google-map'), {
+        selector: 'this',
         download: false,
         closeOnTap: true,
         hideScrollbar: true,
