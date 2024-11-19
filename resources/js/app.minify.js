@@ -1,0 +1,15 @@
+import anime from 'animejs';
+import lightGallery from 'lightgallery';
+import 'lightgallery/css/lightgallery-bundle.min.css'
+// Plugins
+import lgThumbnail from 'lightgallery/plugins/thumbnail'
+import fullscreen from 'lightgallery/plugins/fullscreen'
+import lgZoom from 'lightgallery/plugins/zoom'
+//SWIPER
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
+
+var swiperBanner,int,set=[];function gallery(e){e.forEach(e=>{"CAROUSEL_ALBUM"!=e.media_type&&"IMAGE"!=e.media_type||null!=(e=document.getElementById(e.id))&&lightGallery(e,{plugins:[lgZoom,lgThumbnail,fullscreen],licenseKey:"0000-0000-000-0000",speed:500,controls:!0,thumbnail:!1,download:!1,mode:"lg-fade",closeOnTap:!0,hideScrollbar:!0,mobileSettings:{showCloseIcon:!0},cssEasing:"cubic-bezier(0.25, 0, 0.25, 1)"})})}function loading(){if("complete"===document.readyState){clearInterval(int),document.querySelector("body").classList.add("overflow-y-auto"),document.querySelector(".preloader").style.display="none",null!=document.getElementById("notification")&&setTimeout(()=>{document.getElementById("notification").style.visibility="hidden"},8e3);const e=document.querySelectorAll("img.lazy"),t=document.querySelectorAll("video.lazy"),o=new IntersectionObserver((e,o)=>{e.forEach(e=>{if(e.isIntersecting){const t=e.target;t.src=t.dataset.src,t.classList.add("loaded"),o.unobserve(t)}})});e.forEach(e=>{o.observe(e)}),t.forEach(e=>{o.observe(e)}),lightGallery(document.getElementById("open-google-map"),{selector:"this",download:!1,closeOnTap:!0,closable:!0,mobileSettings:{showCloseIcon:!0},hideScrollbar:!0});new Swiper(".swiper",{loop:!0,speed:800,autoplay:{delay:5e3,disableOnInteraction:!1}});swiperBanner=new Swiper(".mySwiper",{grabCursor:!0,loop:!0,autoplay:{delay:5e3,disableOnInteraction:!1},speed:3e3,effect:"cube",cubeEffect:{shadow:!0,slideShadows:!0,shadowOffset:20,shadowScale:.94},init:!0})}}function scrollToSection(e){var t;e.includes("#")&&(t=document.querySelector(e),document.getElementById("drawer-navigation").classList.add("-translate-x-full"),window.scrollTo({behavior:"smooth",top:"#totop"==e?0:t.offsetTop-50}))}document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("cookie-banner"),t=document.getElementById("accept-cookies");"accepted"==localStorage.getItem("cookieConsent")&&(e.style.display="none"),t.addEventListener("click",()=>{localStorage.setItem("cookieConsent","accepted"),e.style.display="none"})}),window.gallery=gallery,int=setInterval(loading,200),addEventListener("scroll",e=>{window.scrollY>document.querySelector("#banner").offsetHeight?document.querySelector("#top").classList.remove("hidden"):document.querySelector("#top").classList.add("hidden")}),document.querySelector("#top").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})}),document.querySelectorAll("nav a").forEach(e=>{e.addEventListener("click",e=>{e.preventDefault(),scrollToSection(e.currentTarget.getAttribute("href"))})});

@@ -158,9 +158,6 @@
             <iframe class="grayscale hover:grayscale-0 rounded-[25px] block" width="100%" loading="lazy" height="100%" src="{{$aboutme[0]['link_video'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </section>
-    <!-- <section class="md:flex hidden  video_background bg-no-repeat bg-cover bg-center md:h-[600px] items-center justify-center w-full my-[100px]">
-        <iframe class="lazy grayscale hover:grayscale-0 flex" width="100%" height="100%" data-src="{{$video[0]['link'] . '?modestbranding=1&rel=0&autohide=1&iv_load_policy=3&disablekb=1'}}" controls="0" autoplay="1" title="YouTube video player" frameborder="0"  allow="autoplay;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </section> -->
     <!-- INSTAGRAM GOES HERE -->
     <livewire:instagram-gallery />
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
