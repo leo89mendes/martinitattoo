@@ -73,6 +73,8 @@ function afterLoad(){
         },
         init:true,
     });
+    const carrousel_insta = new Swiper('.carrousel_instagram');
+
 }
 //call gallery every time when categorie is clicked
 window.gallery = function(el){
