@@ -117,7 +117,7 @@
                         <a href="#contact" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#1cdfbc] text-center">CONTATO</a>
                     </li>
                     <li x-on:click="open = !open" class="my-4">
-                        <a href="#" class="mx-2 px-8 py-2 border-2  rounded-full border-[#1cdfbc] text-center">ORÇAMENTO</a>
+                        <a href="https://wa.me/{{ $setting[0]->telephone }}" target="_blank" class="mx-2 px-8 py-2 border-2  rounded-full border-[#1cdfbc] text-center">ORÇAMENTO</a>
                     </li>
                 </ul>
                 </div>
