@@ -98,9 +98,6 @@ body{
   font-weight: bold;
   src: url(/storage/app/public/assets/fonts/BebasKai.ttf);
 }
-body {
-  font-family: 'Roboto';
-}
 
 .lazy {
   filter: blur(5px);
@@ -115,4 +112,11 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
 

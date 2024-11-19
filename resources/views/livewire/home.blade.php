@@ -1,4 +1,4 @@
-<div class="container-xl mx-auto h-[700px] text-white Roboto">
+<div class="container-xl mx-auto h-[700px] text-white roboto">
     <div class="preloader"></div>
     <div id="top" class="hidden btn_top fixed bottom-[2rem] right-[2rem] bg-black hover:bg-[#1cdfbc] z-10 rounded-full p-1">
         <div class="scroll-text z-20">

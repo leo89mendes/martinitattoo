@@ -11,6 +11,7 @@ export default {
         extend: {
             fontFamily: {
                 bebas: ['"Bebaskai"', 'sans-serif'],
+                roboto: ['"Roboto"', 'sans-serif'],
             },
         },
     },
