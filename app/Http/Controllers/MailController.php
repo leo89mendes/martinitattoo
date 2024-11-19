@@ -34,7 +34,7 @@ class MailController extends Controller
                         ->withInput();
         }
 
-        Mail::to('leonardo@dreamsintocodes.com')->send(new ContactEmail([
+        Mail::to('martini@martinitattoo.com')->send(new ContactEmail([
             'name' => $request->name,
             'email' => $request->email,
             'cel' => $request->cel,

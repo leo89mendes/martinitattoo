@@ -108,16 +108,16 @@
                 <div class="py-4 overflow-y-auto">
                 <ul class="menu flex flex-col p-4 text-[1.2rem]  rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li x-on:click="open = !open" class="my-4">
-                        <a href="#about" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#76EA00] text-center">SOBRE</a>
+                        <a href="#about" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#1cdfbc] text-center">SOBRE</a>
                     </li>
                     <li x-on:click="open = !open" class="my-4">
-                        <a href="#portfolio" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#76EA00] text-center">PORTIFOLIO</a>
+                        <a href="#portfolio" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#1cdfbc] text-center">PORTIFOLIO</a>
                     </li>
                     <li x-on:click="open = !open" class="my-4">
-                        <a href="#contact" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#76EA00] text-center">CONTATO</a>
+                        <a href="#contact" class="mx-2 px-8 py-2 border-2 border-black rounded-full hover:border-[#1cdfbc] text-center">CONTATO</a>
                     </li>
                     <li x-on:click="open = !open" class="my-4">
-                        <a href="#" class="mx-2 px-8 py-2 border-2  rounded-full border-[#76EA00] text-center">ORÇAMENTO</a>
+                        <a href="#" class="mx-2 px-8 py-2 border-2  rounded-full border-[#1cdfbc] text-center">ORÇAMENTO</a>
                     </li>
                 </ul>
                 </div>
