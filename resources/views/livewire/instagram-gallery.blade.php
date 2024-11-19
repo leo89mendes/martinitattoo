@@ -13,18 +13,18 @@
                     </div>
                     
                 @elseif($insta['media_type'] === "IMAGE")
-                    <div id="{{ $insta['id'] }}" class="gfade h-[350px]">
-                        <figure class="object-cover grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
-                            <img class="lazy rounded-[25px]" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
+                    <div id="{{ $insta['id'] }}" class="gfade">
+                        <figure class="grayscale hover:grayscale-0 " data-src="{{$insta['media_url']}}">
+                            <img class="lazy rounded-[25px] object-cover" width="100%" height="100%" data-src="{{$insta['media_url']}}" src="{{$insta['media_url']}}" alt="">
                         </figure>
                     </div>
                 @elseif(isset($insta['carrousel']))
-                    <div  class="gfade carrousel_instagram overflow-hidden h-full w-full">
+                    <div  class="gfade carrousel_instagram overflow-hidden">
                         <div id="{{ $insta['id'] }}" class="swiper-wrapper">
                             @foreach($insta['carrousel'] as $carrousel)
-                            <div class="swiper-slide grayscale h-[350px] hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
-                                <figure class="object-cover">
-                                    <img class="lazy rounded-[25px]"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
+                            <div class="swiper-slide grayscale hover:grayscale-0" data-src="{{$carrousel['media_url']}}">
+                                <figure>
+                                    <img class="lazy rounded-[25px] object-cover"  width="100%" height="100%" data-src="{{$carrousel['media_url']}}" src="{{$carrousel['media_url']}}" alt="">
                                 </figure>
                             </div>
                             @endforeach
