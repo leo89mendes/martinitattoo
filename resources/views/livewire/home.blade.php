@@ -159,7 +159,22 @@
         </div>
     </section>
     <!-- INSTAGRAM GOES HERE -->
-    <livewire:instagram-gallery />
+    <section id="portfolio" class="md:px-8 px-4 instagram bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px]">
+        <h1 class="bebas text-[2.5rem] text-center w-full uppercase">
+            <a target="_blank" href="https://instagram.com/martinitattoo">Portifolio</a>
+        </h1>
+        <div  x-data="{ }" x-init="
+        gallery($wire.result);" id="instagram" class="grid md:grid-cols-4 grid-cols-2 row-auto md:gap-8 gap-4 cursor-pointer mt-[1.5rem]">
+            @foreach($portfolio as $key => $insta)
+            <div id="{{ $insta['id'] }}" class="gfade">
+                <figure class="grayscale hover:grayscale-0 h-full" data-src="{{ asset('storage/' . $insta['img']) }}">
+                    <img class="lazy rounded-[25px] object-cover h-full bg-center" width="100%" height="100%" data-src="{{ asset('storage/' . $insta['img']) }}" src="{{ asset('storage/' . $insta['img']) }}" alt="">
+                </figure>
+            </div>
+            @endforeach
+        </div>
+    </section>
+    
     <section class="testimonials cursor-pointer bg-no-repeat bg-cover bg-center contact flex flex-col justify-center w-full md:text-left text-center md:my-[100px] my-[50px] py-8" style="background-image: url({{ asset('storage/' . $setting[0]['bg_clients']) }})">
         <span class="font-medium text-[#1cdfbc] text-center">Testimoniais</span>
         <h1 class="bebas text-[2.5rem] text-center w-full uppercase">
